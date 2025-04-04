@@ -1,10 +1,10 @@
 function Main() {
 
 
-    
+
     return (
         <main>
-            <div className="container">
+            <div className="container weekdays">
                 <div className="monday">
                     <p>Monday</p>
 

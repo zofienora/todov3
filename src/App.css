@@ -3,9 +3,37 @@
   margin: 0 auto;
 }
 
+/* Header */
+
 .header {
   text-align: center;
   margin-bottom: 5em;
   padding-bottom: 1em;
   border-bottom: 1px solid #ccc;
 }
+
+
+/* Main */
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
+
+.monday { grid-area: 1 / 1 / 2 / 2; }
+.tuesday { grid-area: 1 / 2 / 2 / 3; }
+.wednesday { grid-area: 1 / 3 / 2 / 4; }
+.thursday { grid-area: 2 / 1 / 3 / 2; }
+.friday { grid-area: 2 / 2 / 3 / 3; }
+.sasu { grid-area: 2 / 3 / 3 / 4; }
+
+
+
+/* List Style */
+
+
+
+/* Footer */
