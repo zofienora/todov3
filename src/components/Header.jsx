@@ -51,7 +51,7 @@ function Header() {
 
     return (
         <>
-        <div className="container">
+        <div className="container header">
             <h1>Weekly ToDos</h1>
             <p id="quote" className="quote">{quote}</p>
         </div>
