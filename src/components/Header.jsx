@@ -2,7 +2,8 @@ function Header() {
     return (
         <>
         <div className="container">
-            <h1>To Do List</h1>
+            <h1>Weekly ToDos</h1>
+            <p id="quote" className="quote"></p>
         </div>
         </>
     )
