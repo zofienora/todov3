@@ -1,132 +1,83 @@
+import React, { useState } from "react";
+
+const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday/Sunday"];
+
 function Main() {
 
+    const [todos, setTodos] = useState({
+        Monday: [],
+        Tuesday: [],
+        Wednesday: [],
+        Thursday: [],
+        Friday: [],
+        "Saturday/Sunday": [],
+      });
+    
+      const [inputs, setInputs] = useState({
+        Monday: "",
+        Tuesday: "",
+        Wednesday: "",
+        Thursday: "",
+        Friday: "",
+        "Saturday/Sunday": "",
+      });
+    
+      const handleInputChange = (day, value) => {
+        setInputs(prev => ({ ...prev, [day]: value }));
+      };
+    
+      const handleAddTodo = (day) => {
+        const newTodo = inputs[day].trim();
+        if (newTodo === "") return;
+    
+        setTodos(prev => ({
+          ...prev,
+          [day]: [...prev[day], newTodo],
+        }));
+    
+        setInputs(prev => ({ ...prev, [day]: "" }));
+      };
+    
+      const handleDelete = (day, index) => {
+        setTodos(prev => ({
+          ...prev,
+          [day]: prev[day].filter((_, i) => i !== index),
+        }));
+      };
 
-
-    return (
+      return (
         <main>
-            <div className="container weekdays">
-                <div className="monday">
-                    <p>Monday</p>
-
-                    <div class="input-container">
-                        <input type="text" id="input" placeholder=" "/>
-                        <button id="addButton">➕</button>
-                    </div>
-
-                    <ul id="todo-list">
-                        <li>
-                            <div class="checkbox" id="checkbox"></div>
-                            <div class="listvalue" id="listvalue">
-                                <p id="inputfield"></p>
-                            </div>
-                            <div class="delete" id="delete"></div>
-                        </li>
-                    </ul>
-
+          <div className="container weekdays">
+            {days.map((day) => (
+              <div key={day} className={day.toLowerCase().replace("/", "")}>
+                <p>{day}</p>
+    
+                <div className="input-container">
+                  <input
+                    type="text"
+                    value={inputs[day]}
+                    onChange={(e) => handleInputChange(day, e.target.value)}
+                    placeholder="Add a task..."
+                  />
+                  <button onClick={() => handleAddTodo(day)}>➕</button>
                 </div>
-
-
-                <div className="tuesday">
-                    <p>Tuesday</p>
-
-                    <div class="input-container">
-                        <input type="text" id="input" placeholder=" "/>
-                        <button id="addButton">➕</button>
-                    </div>
-
-                    <ul id="todo-list">
-                        <li>
-                            <div class="checkbox" id="checkbox"></div>
-                            <div class="listvalue" id="listvalue">
-                                <p id="inputfield"></p>
-                            </div>
-                            <div class="delete" id="delete"></div>
-                        </li>
-                    </ul>
-                    
-                    
-                </div>
-
-                <div className="wednesday">
-                    <p>Wednesday</p>
-
-                    <div class="input-container">
-                        <input type="text" id="input" placeholder=" "/>
-                        <button id="addButton">➕</button>
-                    </div>
-
-                    <ul id="todo-list">
-                        <li>
-                            <div class="checkbox" id="checkbox"></div>
-                            <div class="listvalue" id="listvalue">
-                                <p id="inputfield"></p>
-                            </div>
-                            <div class="delete" id="delete"></div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div className="thursday">
-                    <p>Thursday</p>
-
-                    <div class="input-container">
-                        <input type="text" id="input" placeholder=" "/>
-                        <button id="addButton">➕</button>
-                    </div>
-
-                    <ul id="todo-list">
-                        <li>
-                            <div class="checkbox" id="checkbox"></div>
-                            <div class="listvalue" id="listvalue">
-                                <p id="inputfield"></p>
-                            </div>
-                            <div class="delete" id="delete"></div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div className="friday">
-                    <p>Friday</p>
-
-                    <div class="input-container">
-                        <input type="text" id="input" placeholder=" "/>
-                        <button id="addButton">➕</button>
-                    </div>
-
-                    <ul id="todo-list">
-                        <li>
-                            <div class="checkbox" id="checkbox"></div>
-                            <div class="listvalue" id="listvalue">
-                                <p id="inputfield"></p>
-                            </div>
-                            <div class="delete" id="delete"></div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div className="sasu">
-                    <p>Saturday/Sunday</p>
-
-                    <div class="input-container">
-                        <input type="text" id="input" placeholder=" "/>
-                        <button id="addButton">➕</button>
-                    </div>
-
-                    <ul id="todo-list">
-                        <li>
-                            <div class="checkbox" id="checkbox"></div>
-                            <div class="listvalue" id="listvalue">
-                                <p id="inputfield"></p>
-                            </div>
-                            <div class="delete" id="delete"></div>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-            
+    
+                <ul className="todo-list">
+                  {todos[day].map((todo, index) => (
+                    <li key={index}>
+                      <div className="checkbox"></div>
+                      <div className="listvalue">
+                        <p>{todo}</p>
+                      </div>
+                      <div className="delete" onClick={() => handleDelete(day, index)}>❌</div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </main>
-    );
+      );
 }
 
 export default Main;
