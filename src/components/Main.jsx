@@ -61,6 +61,8 @@ function Main() {
           [day]: prev[day].filter((_, i) => i !== index),
         }));
       }; // Delete todo from the list
+
+
       return (
         <main>
           <div className="container weekdays">
@@ -90,7 +92,7 @@ function Main() {
                       <div className="listvalue">
                         <p>{todo}</p>
                       </div>
-                      <div className="delete" onClick={() => handleDelete(day, index)}><span>X</span></div>
+                      <div className="delete" onClick={() => handleDelete(day, index)}><span className="deletex" >X</span></div>
                     </li>
                   ))}
                 </ul>

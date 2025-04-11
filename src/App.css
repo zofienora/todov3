@@ -103,6 +103,17 @@ span {
   color: blue
 }
 
+.deletex {
+  color:lightgrey;
+  font-size: 0.8rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.deletex:hover {
+  color: blue;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 750px) {
   .weekdays {
     display: flex;
