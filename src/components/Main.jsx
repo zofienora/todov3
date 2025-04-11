@@ -54,22 +54,22 @@ function Main() {
     
                 <div className="input-container">
                   <input
+                    className="input"
                     type="text"
                     value={inputs[day]}
                     onChange={(e) => handleInputChange(day, e.target.value)}
-                    placeholder="Add a task..."
+                    placeholder="Task..."
                   />
-                  <button onClick={() => handleAddTodo(day)}>➕</button>
+                  <button className="addButton" onClick={() => handleAddTodo(day)}><span>+</span></button>
                 </div>
     
                 <ul className="todo-list">
                   {todos[day].map((todo, index) => (
                     <li key={index}>
-                      <div className="checkbox"></div>
                       <div className="listvalue">
                         <p>{todo}</p>
                       </div>
-                      <div className="delete" onClick={() => handleDelete(day, index)}>❌</div>
+                      <div className="delete" onClick={() => handleDelete(day, index)}><span>X</span></div>
                     </li>
                   ))}
                 </ul>

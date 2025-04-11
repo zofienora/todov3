@@ -1,3 +1,10 @@
+:root {
+  --background-color: #f5f5f5;
+  --text-color: #333333;
+  --font-size: 16px;
+  --font-family: "Poppins", sans-serif;
+}
+
 .container {
   width: 80%;
   margin: 0 auto;
@@ -33,6 +40,55 @@
 
 
 /* List Style */
+
+.container {
+  border: 2px solid red;
+}
+
+.weekdays {
+  border: 2px solid blue;
+  gap: 1em;
+}
+
+.input-container {
+/*   border: 2px solid greenyellow;
+ */}
+
+.input-container input {
+  padding: 0.1em;
+  font-family: var(--font-family);
+}
+
+.addButton {
+  margin-left: 1em;
+  border: none;
+  background-color: #d3e9ff;
+  padding: 0.3em 0.5em;
+}
+
+.addButton:active {
+  background-color: #a3c4ff;
+}
+
+.todo-list {
+  list-style: none;
+  padding-left: 0;       /* Removes default left padding */
+  margin-left: 0;    
+}
+
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listvalue {
+  font-size: 0.8rem;
+}
+
+span {
+  font-size: 0.8rem;
+}
 
 
 
