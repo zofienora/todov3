@@ -84,7 +84,6 @@
   list-style: none;
   padding-left: 0;       /* Removes default left padding */
   margin-left: 0;  
-  max-width: 185px;
 }
 
 .todo-list li {
@@ -110,11 +109,5 @@ span {
     flex-direction: column;
     align-items: center;  
   }
-
-  .todo-list {
-    min-width: 185px;
-    max-width: 300px;
-  }
 }
 
-/* Footer */
