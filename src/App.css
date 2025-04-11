@@ -37,14 +37,31 @@
 .friday { grid-area: 2 / 2 / 3 / 3; }
 .sasu { grid-area: 2 / 3 / 3 / 4; }
 
-
+@media screen and (max-width: 750px) {
+  .weekdays {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 /* List Style */
 
-
-
 .weekdays {
   gap: 1em;
+}
+
+.monday, .tuesday, .wednesday, .thursday, .friday, .saturdaysunday {
+  background-color: #e5ebf9;
+  border-radius: 10px;
+  padding-left: 1em;
+  padding-right: 1em;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 190px;
 }
 
 .input-container input {
@@ -66,7 +83,8 @@
 .todo-list {
   list-style: none;
   padding-left: 0;       /* Removes default left padding */
-  margin-left: 0;    
+  margin-left: 0;  
+  max-width: 185px;
 }
 
 .todo-list li {
@@ -86,6 +104,17 @@ span {
   color: blue
 }
 
+@media screen and (max-width: 750px) {
+  .weekdays {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+  }
 
+  .todo-list {
+    min-width: 185px;
+    max-width: 300px;
+  }
+}
 
 /* Footer */
