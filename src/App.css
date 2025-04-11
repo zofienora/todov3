@@ -41,18 +41,11 @@
 
 /* List Style */
 
-.container {
-  border: 2px solid red;
-}
+
 
 .weekdays {
-  border: 2px solid blue;
   gap: 1em;
 }
-
-.input-container {
-/*   border: 2px solid greenyellow;
- */}
 
 .input-container input {
   padding: 0.1em;
@@ -63,7 +56,7 @@
   margin-left: 1em;
   border: none;
   background-color: #d3e9ff;
-  padding: 0.3em 0.5em;
+  padding: 0.2em 0.5em;
 }
 
 .addButton:active {
@@ -87,7 +80,10 @@
 }
 
 span {
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  color: blue
 }
 
 
