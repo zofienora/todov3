@@ -58,6 +58,11 @@ function Main() {
                     type="text"
                     value={inputs[day]}
                     onChange={(e) => handleInputChange(day, e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        handleAddTodo(day);
+                      }
+                    }}
                     placeholder="Task..."
                   />
                   <button className="addButton" onClick={() => handleAddTodo(day)}><span>+</span></button>
