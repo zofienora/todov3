@@ -12,7 +12,6 @@ function Header() {
         "I deserve love, success, and abundance.",
         "I am constantly growing and evolving.",
         "I choose to focus on what I can control.",
-        "I am enough just as I am.",
         "I embrace challenges as opportunities for growth.",
         "I am surrounded by love and support.",
         "I have the power to create change in my life.",
@@ -22,7 +21,9 @@ function Header() {
         "I release self-doubt and welcome confidence.",
         "I am in charge of my own happiness.",
         "I have everything I need within me.",
-        "I am proud of who I am becoming."
+        "I am proud of who I am becoming.",
+        "Obession beats talent every time",
+        "Discipline beats motivation",
     ];
 
     const [quote, setQuote] = useState('');
