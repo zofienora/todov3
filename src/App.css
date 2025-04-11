@@ -109,5 +109,8 @@ span {
     flex-direction: column;
     align-items: center;  
   }
+  .monday, .tuesday, .wednesday, .thursday, .friday, .saturdaysunday {
+    width: 70%;
+  }
 }
 
